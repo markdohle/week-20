@@ -42,7 +42,54 @@ In Module 20: Testing, you’ll learn how to build, deploy, and test a React app
 
 ### Video 20.1 Introdeuction to Create React App
 
+React Command Line Interface: Craete a whole project
+
+```npx create-react-app``` To create a project folder with sub-folders and skeleton files with standard nameing conventions.
+
+Create React App
+
+In the course so far, you’ve created React applications from scratch. Now, you’ll learn about a tool that comes with a configuration and a scripts command that makes it much easier to build React applications: [Create React App](https://github.com/facebook/create-react-app)
+
+A script is a set of instructions that tells a program what to do. In React, scripts help turn JSX into plain JavaScript code that can be interpreted by all browsers.  They are located in the ```package.json``` file, which has some default scripts that you can edit.
+
+Popular Create React App Scripts
+
+Create React App dramatically streamlines the React development process and it ships with a few scripts.
+
+- Start: React uses Node.js on development to open the app on http://localhost:3000. The npm start script enables you to start the server and display the latest version of the app each time a change occurs, as well as any code errors. 
+- Build: React is modular, so there are several files or components within a single application. The npm build script bundles these components into one single file so they can be deployed. It also aids in performance; React uses the build script to ensure that the finished project is minified and optimized with best practices.
+- Test: Create React App uses Jest as a test runner. The npm test script enables you to launch the test runner in interactive watch mode.
+
+Not only does Create React App come with useful scripts that can help make any developer’s life easier but also some commands with flexible options that will enable you to fit the scripts to the unique needs of your project.
+
 ### Video 20.2 Istall Create React App
+
+Learn how to install Create React App in your local directory. Using Create React App will help you prepare files for deployment to the cloud. Go through the bundle of files that are created when you use Create React App.
+
+```npx create-react-app mydirectory``` Creates the app directory.
+
+```npm start``` Starts the development server.
+
+```npm run build``` Bundles the app into static files for production.
+
+```npm test``` Starts the test runner.
+
+```npm run eject``` Removes this tool and copies build dependencies, configuration files and scripts into the app directory.
+
+1. Install cartsoln01 is the directory name that will be created ```npx create-react-app cartsoln01```
+
+2. Start the development server ```npm start```
+
+3. Files in the app
+- node_modules
+- public: public images that are used
+- src: Source files
+     - index.js renders to DOM
+     - app.js is the main component and starting point
+          - loads an image src={logo} from the public directory
+          - Link <a> Let's Learn React </a>
+
+4. Make a change to the link text to see how the DOM reacts. Change the text and save. The app is watching for changes and the DOM reloads automatically.
 
 ### NPM Scripts for React
 

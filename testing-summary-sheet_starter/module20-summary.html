@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Testing</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+  <div class="container">
+    <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px" />
+    <h1 class="header-text">Testing</h1>
+  </div>
+  <p>Please review the concepts covered this module.</p>
+
+  <h2 id="create-react-app">Create-React-App</h2>
+  <p>
+    Create-React-App is a command you can run via the command line that creates an entirely
+    configured React application for you, complete with Babel setup, recommended folder structure,
+    and some skeleton files, like a skeleton App.js. To run this command, run this command in your
+    command line:
+  </p>
+  <pre><code class="lang-js"><span class="hljs-attribute">npx create-react-app</span>
+</code></pre>
+
+  <p>
+    After some time downloading, you'll have an entire React application set up so that you can
+    start editing the files for your own purposes right away!
+  </p>
+  <h2 id="graphql">GraphQL</h2>
+  <p>
+    GraphQL is an API query framework that allows you to specify exactly what data you want from an
+    API. This helps with load time by eliminating excess data, and allows for more flexibility in
+    the client/server communication stream.
+  </p>
+  <p>
+    For example, if you had an API that had data on gyms in the area (name, hours, amenities,
+    membership costs, etc.) and you only wanted to get the name and ID of all the gyms for your app,
+    if you went through a traditional API query method, you'd have to wait for a long time for all
+    the data and have a lot of extra data to sort through in your app.
+  </p>
+  <p>A GraphQL query for just the names and IDs of the gyms looks like this:</p>
+  <pre><code class="lang-js">{gyms {<span class="hljs-built_in">id</span>, <span class="hljs-built_in">name</span>}}
+</code></pre>
+  <p>To see an example in real time, review Dr. William&#39;s video, &quot;GraphQL demo&quot;.</p>
+  <h2 id="testing-and-tdd">Testing and TDD</h2>
+  <p>
+    Testing is such a vast field in engineering that there are entirely separate jobs dedicated to
+    it, such as those of Quality Assurance Engineers and Test Engineers.
+  </p>
+  <p>
+    Test driven development is a recent development in the software engineering industry. The
+    process of engineering in this manner involves writing a test for the functionality you want
+    your code to have, making the test fail, and then writing code in an iterative process to make
+    the test pass. This allows for far fewer bugs and a much faster development lifecycle overall.
+  </p>
+
+  <p>
+    For example, if you want to find out if your application has an H1 tag that contains the text,
+    &quot;ToDo&quot;, the test would look like this:
+  </p>
+  <pre><code class="lang-js">test('ToDo', () =&gt; {
+  const root = document.createElement('div')<span class="hljs-comment">;</span>
+  ReactDOM.render(<span class="hljs-name">&lt;App/&gt;</span>, root)<span class="hljs-comment">;</span>
+
+  expect(<span class="hljs-name">root</span>.querySelector(<span class="hljs-string">"h1"</span>).textContent.toBe(<span class="hljs-string">"ToDo"</span>)<span class="hljs-comment">;</span>
+})<span class="hljs-comment">;</span>
+</code></pre>
+
+  <h2 id="mocks">Mocks</h2>
+  <p>
+    When you're testing your code, oftentimes you’ll need to test your components which have a
+    dependency on some other service that has unpredictable results, or takes a long time to receive
+    a response from. What you’ll do in those situations is add a “mock”, or fake dependency, so that
+    you can focus on testing only what you're building, not the dependency’s functionality.
+  </p>
+  <p>
+    Here&#39;s an example of some React code that displays <code>this is my component</code> to the
+    screen:
+  </p>
+  <pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> ‘react’;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myComponent</span>(<span class="hljs-params"></span>) </span>{ 
+  <span class="hljs-keyword">return</span> (
+   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>this is my component<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre>
+  <p>
+    Now, if you were testing that code, normally you&#39;d test for something like that exact phrase
+    being displayed as expected. But what if you wanted to instead &quot;mock&quot; that component
+    in your test file, and make it say something else entirely?
+  </p>
+  <p>That'd look like this:</p>
+  <pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> ‘react’;
+<span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> ‘@testing-library/react’;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> ‘./App’;
+
+<span class="hljs-comment">//mock your component here </span>
+jest.mock (‘./MyComponent’, () =&gt; <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Hello, World!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>));
+
+test (‘mocking test’, () =&gt; {
+  <span class="hljs-comment">//test contents here </span>
+});
+</code></pre>
+  <p>
+    As you can see, you're replacing the &quot;this is my component&quot; statement in your original
+    component with some new text, and testing if the new text you have put in is displayed instead.
+    This type of functionality becomes important when you have data that you don&#39;t necessarily
+    want to test, but you need for some other section of your code to run. Instead of using data
+    that's large or unpredictable, you can &quot;mock&quot; that data, and focus on the code you
+    really want to test.
+  </p>
+
+  <p class="footer">© MIT xPRO 2020. All rights reserved.</p>
+</body>

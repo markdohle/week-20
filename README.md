@@ -95,6 +95,63 @@ Learn how to install Create React App in your local directory. Using Create Reac
 
 ### Video 20.3 Create React App - Shopping Cart Example
 
+Align it to the Create React App structure. Use the week-19 shopping cart.
+
+1. Create a components directory inside the source(SCR) directory.
+
+2. Create peoducts.jsx and paste cart.jsx script.
+
+3. Get imports into products.js.
+
+```import React from 'react';```
+
+```Import ReactBootstrap from `react-bootstrap`;```
+
+```import axios from `axios`;```
+
+4. Load react-bootstrap, axios and bootstrap from terminal.
+
+```npm install react-bootstrap```
+
+```npm install axios```
+
+```npm install bootstrap```
+
+5. Remove render command from products.js. Rendering happens in the App component.
+
+6. Move bootstrap components to global scope and import.
+
+```
+import {
+    Card,
+    Accordion,
+    Button,
+    Container,
+    Row,
+    Col,
+    Image,
+    Input,
+  } from `react-bootstrap`;
+```
+
+7. In the App return tags, replace contents with Products component which is imported from products.js.
+
+```import Products from "./Components/products;"```
+
+```<Products></Products>```
+
+8. In the products.js, export Products component.
+
+```export default Products;```
+
+9. In index.js, import bootstrap which was installed in step 4.
+
+```import "bootstrap/dist/css/bootstrap.css";```
+
+
+
+
+
 ### Video 20.4 Build Static Website
 
 ## Deploy to the Cloud

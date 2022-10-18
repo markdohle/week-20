@@ -1,3 +1,17 @@
+import React from "react";
+import ReactBootstrap from "react-bootstrap";
+import axios from "axios";
+import {
+    Card,
+    Accordion,
+    Button,
+    Container,
+    Row,
+    Col,
+    Image,
+    //Input,
+  } from "react-bootstrap";
+//==============================================================
 // simulate getting products from DataBase
 const products = [
     { name: "Apples_:", country: "Italy", cost: 3, instock: 10 },
@@ -6,13 +20,14 @@ const products = [
     { name: "Cabbage:", country: "USA", cost: 1, instock: 8 },
   ];
   //=========Cart=============
-  const Cart = (props) => {
+  /*const Cart = (props) => {
     const { Card, Accordion, Button } = ReactBootstrap;
     let data = props.location.data ? props.location.data : products;
     console.log(`data:${JSON.stringify(data)}`);
   
     return <Accordion defaultActiveKey="0">{list}</Accordion>;
   };
+  */
   //useDataApi takes care of state
   //fetch data from the warehouse changes the url and fires the fetch from the database
   const useDataApi = (initialUrl, initialData) => {
@@ -81,19 +96,6 @@ const products = [
     const [total, setTotal] = React.useState(0);
     
     console.log(`these are in the cart ${JSON.stringify(cart)}`)
-  
-    
-    
-    const {
-      Card,
-      Accordion,
-      Button,
-      Container,
-      Row,
-      Col,
-      Image,
-      Input,
-    } = ReactBootstrap;
     //  Fetch Data by calling the useDataApi function.
     const { Fragment, useState, useEffect, useReducer } = React;
     const [query, setQuery] = useState("products");
@@ -282,5 +284,5 @@ const products = [
     );
   };
   // ========================================
-  ReactDOM.render(<Products />, document.getElementById("root"));
+  export default Products;
   

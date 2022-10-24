@@ -267,7 +267,7 @@ This isn't going to work. I had to set up an IAM user with administrator authori
 
 6. Another option for hosting a website is to go through github. See below.
 
-[Host a Static Website](aws.amazon.com/getting-started/hands-on/host-static-website/)
+[Host a Static Website](https://aws.amazon.com/getting-started/hands-on/host-static-website/)
 
 url for alias ```https://astros2017.signin.aws.amazon.com/console```
 
